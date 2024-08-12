@@ -1,5 +1,10 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "build/index.html"
   status = 200
   force = true
+
+
+[build]
+  command = "CI='' pnpm build"
+  publish = "build"
