@@ -10,7 +10,7 @@ Welcome to the Digital Memobook frontend repository! This project provides a use
 
 - **User Photos:**
   - Display user photos.
-    - [ ] get_photos(, filter)
+    - [x] get_photos(, filter)
       - [ ] back_end 
   - Delete user photos.
     - delete_photos()
