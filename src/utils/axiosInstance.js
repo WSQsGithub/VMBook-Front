@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // 创建Axios实例
 const apiClient = axios.create({
-  baseURL: 'http://192.168.0.34:8000', // 替换为你的API基础URL
+  baseURL: window.backend_url, // 替换为你的API基础URL
   headers: {
     'Content-Type': 'application/json',
     // 其他默认请求头

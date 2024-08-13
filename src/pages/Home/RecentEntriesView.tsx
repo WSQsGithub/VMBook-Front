@@ -15,7 +15,7 @@ export interface Entry {
 
 export function findFirstUrl(markdown: string): string | null {
     // The regex to match the URL
-    const urlPattern = /http?:\/\/[^\s)]+/g;
+    const urlPattern = /https?:\/\/[^\s)]+/g;
     const match = urlPattern.exec(markdown);
     
     // Return the first match

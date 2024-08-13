@@ -63,7 +63,7 @@ const UserPhotoGalleryContent: React.FC<UserPhotoGalleryContentProps> = React.me
                                                 display: 'block', // 确保图片块级显示
                                                 margin: '0 auto' // 图片水平居中
                                             }}
-                                            src={`http://${item.url}`}
+                                            src={`${item.url}`}
                                         />
                                     </Tooltip>
                                 </CheckCard>

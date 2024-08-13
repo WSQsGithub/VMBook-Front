@@ -32,7 +32,7 @@ const UploadModal: React.FC<UploadModalProps> = ({ isVisible, onClose, onUploadS
 
 
     try {
-      const response = await axios.post(`http://192.168.0.34:8000/users/${window.user_id}/photos`, formData, {
+      const response = await axios.post(`${window.backend_url}/users/${window.user_id}/photos`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
