@@ -1,5 +1,5 @@
 # 使用官方 Node.js 18 镜像作为基础镜像
-FROM node:20
+FROM registry.cn-hangzhou.aliyuncs.com/base_mj/vmbook:frontend-latest
 
 # 设置工作目录
 WORKDIR /usr/src/app
