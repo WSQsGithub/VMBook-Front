@@ -27,8 +27,8 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
 
   return (
     <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center' }}>
-        <a href="/" style={{ color: 'white', fontSize: 24, fontFamily: 'cursive', fontWeight: 'bold', backgroundColor: colorPrimary }}>
+      <Header style={{ display: 'flex', alignItems: 'center' , backgroundColor: colorPrimary }}>
+        <a href="/" style={{ color: 'white', fontSize: 24, fontFamily: 'cursive', fontWeight: 'bold' }}>
          <GiMagicSwirl /> SnapTale
         </a>
       </Header>
