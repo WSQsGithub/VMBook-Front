@@ -10,7 +10,7 @@ import {
 import { GiMagicSwirl } from "react-icons/gi";
 import { addUserJournal } from "../../utils/journals";
 
-const MenuButton = () => {
+const MenuButton: React.FC = () => {
   return (
     <FloatButton.Group
       trigger="hover"
