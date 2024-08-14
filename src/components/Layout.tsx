@@ -1,7 +1,8 @@
 import React from 'react';
-import { Layout, theme } from 'antd';
+import { Layout, Space, theme } from 'antd';
 import MenuButton from './MenuButton/MenuButton';
 import { GiMagicSwirl } from "react-icons/gi";
+import { ReactComponent as MyIcon } from '../assets/logo.svg';
 
 const { Header, Content, Footer } = Layout;
 
@@ -27,9 +28,10 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
 
   return (
     <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center' , backgroundColor: colorPrimary }}>
+      <Header style={{ display: 'flex', alignItems: 'center' }}>
         <a href="/" style={{ color: 'white', fontSize: 24, fontFamily: 'cursive', fontWeight: 'bold' }}>
-         <GiMagicSwirl /> SnapTale
+         <Space><MyIcon style={{ height: '10vh' }}/> SnapTale
+          </Space>
         </a>
       </Header>
       <Content style={{ padding: '0 24px',
