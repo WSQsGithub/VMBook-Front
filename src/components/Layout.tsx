@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, theme } from 'antd';
 import MenuButton from './MenuButton/MenuButton';
-import { AndroidFilled } from '@ant-design/icons';
+import { GiMagicSwirl } from "react-icons/gi";
 
 const { Header, Content, Footer } = Layout;
 
@@ -27,9 +27,9 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
 
   return (
     <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center', backgroundColor: colorPrimary }}>
-        <a href="/" style={{ color: 'white', fontSize: 24 }}>
-          <AndroidFilled /> VMBook
+      <Header style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="/" style={{ color: 'white', fontSize: 24, fontFamily: 'cursive', fontWeight: 'bold', backgroundColor: colorPrimary }}>
+         <GiMagicSwirl /> SnapTale
         </a>
       </Header>
       <Content style={{ padding: '0 24px',
