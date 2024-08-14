@@ -88,11 +88,12 @@ async function updateUserJournal(userId: string, entry: JournalResponse): Promis
 }
 
 
-async function deleteUserJournal(userId: string, entryId: number): Promise<void> {
+async function deleteUserJournal(userId: string, entryId: number): Promise<JournalResponse> {
     try {
         const url = `${window.backend_url}/users/${userId}/journals/${entryId}`;
         const response = await axios.delete(url);
         console.log('User journal deleted:', response.data);
+        return response.data as JournalResponse;
     } catch (error) {
         console.error('Error deleting user journal:', error);
         throw error;
@@ -100,11 +101,16 @@ async function deleteUserJournal(userId: string, entryId: number): Promise<void>
 }
 
 
-async function addUserJournal(userId: string, entry: JournalResponse): Promise<void> {
+async function addUserJournal(userId: string): Promise<JournalResponse> {
     try {
-        const url = `/api/journal/${userId}`;
+        const url = `${window.backend_url}/users/${userId}/journals/`;
+        const entry = {
+            title: 'New Journal',
+            description: '# New Journal',
+        };
         const response = await axios.post(url, entry);
         console.log('User journal added:', response.data);
+        return response.data as JournalResponse;
     } catch (error) {
         console.error('Error adding user journal:', error);
         throw error;

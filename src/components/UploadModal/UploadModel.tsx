@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Upload, message } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
@@ -13,7 +13,6 @@ interface UploadModalProps {
 }
 
 const UploadModal: React.FC<UploadModalProps> = ({ isVisible, onClose, onUploadSuccess }) => {
-  const [fileList, setFileList] = useState<any[]>([]);
 
   const customRequest = async ({ file, onSuccess, onError }: any) => {
     const formData = new FormData();

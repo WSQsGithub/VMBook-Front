@@ -2,11 +2,10 @@ import React, { useEffect, useCallback, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MyLayout from '../../components/Layout';
 import SearchBar, { SearchFilters } from '../../components/SearchBar/SearchBar';
-import { Space, FloatButton, message, Upload } from 'antd';
+import { Space, FloatButton, message } from 'antd';
 import getUserPhoto, { PhotoResponse } from '../../utils/photos';
 import GalleryButtons from './GalleryButton';
 import UserPhotoGalleryContent from './UserGalleryContent';
-import axios from 'axios';
 import { deleteUserPhotos, describeUserPhoto, downloadSelectedPhotos, generateJournalFromPhotos } from '../../utils/photos';
 
 function calculateLimit() {

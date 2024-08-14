@@ -8,6 +8,7 @@ import {
   PictureOutlined,
   AndroidFilled,
 } from "@ant-design/icons";
+import { addUserJournal } from "../../utils/journals";
 
 const MenuButton = () => {
   return (
@@ -51,8 +52,15 @@ const MenuButton = () => {
         tooltip="New Journal"
         onClick={() => {
           console.log("Navigating to New Journal");
-          window.location.href = "/journalview";
-      }}
+          addUserJournal(window.user_id)
+          .then((journal) => {
+            console.log("Navigating to Journal:", journal.id);
+            window.location.href = `/journalview?journalId=${journal.journal_id}`;
+          })
+          .catch((error) => {
+            console.error("Error adding user journal:", error);
+          });
+    }}
       />
     </FloatButton.Group>
   );

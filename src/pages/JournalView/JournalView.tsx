@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom'; // Import useParams
 import MyLayout from '../../components/Layout';
 import { Button, message, Tooltip } from 'antd';
 import ReactMarkdown from 'react-markdown'
@@ -52,6 +51,7 @@ const JournalViewContent: React.FC<JournalViewContentProps> = ({ journalContent,
                     components={{
                         img: ({ node, ...props }) => ( 
                             <img 
+                            alt=''
                             style={{ 
                                 maxWidth: '40vw',
                                 maxHeight: '40vh',
@@ -72,7 +72,7 @@ const JournalViewContent: React.FC<JournalViewContentProps> = ({ journalContent,
                     <ReactMarkdown remarkPlugins={[remarkGfm]}
                     components={{
                         img: ({ node, ...props }) => ( 
-                            <img style={{ 
+                            <img alt='' style={{ 
                                 maxWidth: '40vw',
                                 maxHeight: '40vh',
                                 display: 'block',
