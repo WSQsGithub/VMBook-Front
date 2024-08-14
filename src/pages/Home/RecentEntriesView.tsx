@@ -60,7 +60,7 @@ const RecentEntriesView: React.FC = () => {
             dataSource={entries}
             renderItem={(Item) => (
                 <List.Item>
-                    <a href={`http://${window.ip_and_port}/journalview?journalId=${Item.journal_id}`}>
+                    <a href={`/journalview?journalId=${Item.journal_id}`}>
                         <Card
                             hoverable
                             cover={

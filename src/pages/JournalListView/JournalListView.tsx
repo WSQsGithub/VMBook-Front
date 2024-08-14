@@ -103,7 +103,7 @@ const JournalListContent: React.FC<JournalListContentProps> = React.memo(
                             }
                         >
                             <List.Item.Meta
-                                title={<a href={`http://${window.ip_and_port}/journalview?journalId=${item.journal_id}`}>{item.title}</a>}
+                                title={<a href={`/journalview?journalId=${item.journal_id}`}>{item.title}</a>}
                                 description={item.description}
                             />
                             {item.content}
