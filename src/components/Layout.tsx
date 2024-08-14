@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout, Space, theme } from 'antd';
 import MenuButton from './MenuButton/MenuButton';
-import { GiMagicSwirl } from "react-icons/gi";
 import { ReactComponent as MyIcon } from '../assets/logo.svg';
 
 const { Header, Content, Footer } = Layout;
