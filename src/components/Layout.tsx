@@ -11,7 +11,7 @@ interface MyLayoutProps {
 
 const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { colorBgContainer, borderRadiusLG, colorPrimary },
   } = theme.useToken();
 
   // TODO: Manage breadcrumb items dynamically with React Context
@@ -27,13 +27,13 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
 
   return (
     <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center' }}>
+      <Header style={{ display: 'flex', alignItems: 'center', backgroundColor: colorPrimary }}>
         <a href="/" style={{ color: 'white', fontSize: 24 }}>
           <AndroidFilled /> VMBook
         </a>
       </Header>
       <Content style={{ padding: '0 24px',
-        margin: '5px 0'
+        margin: '5px 0' , backgroundColor: '#F0F2F5'
        }}>
         <div
           style={{
@@ -46,7 +46,7 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
           {children}
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer style={{ textAlign: 'center', backgroundColor: '#F0F2F5'  }}>
         Ant Design ©{new Date().getFullYear()} Created by Ant UED
       </Footer>
       <MenuButton />

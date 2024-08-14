@@ -1,11 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ConfigProvider, theme } from 'antd';
+import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import JournalListView from './pages/JournalListView/JournalListView';
 import UserPhotoGallery from './pages/UserPhotoGallery/UserPhotoGallery';
 import JournalView from './pages/JournalView/JournalView';
 
 const App: React.FC = () => (
+  <ConfigProvider
+    theme={{
+      token: {
+        // Seed Token，影响范围大
+        // colorPrimary: '#98d6eb',
+        // borderRadius: 2,
+
+        // // 派生变量，影响范围小
+        // colorBgContainer: '#FFFFFF',
+      },
+    }}
+  >
+
+
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
@@ -16,6 +31,7 @@ const App: React.FC = () => (
       <Route path="*" element={<div>Not Found</div>} />
     </Routes>
   </Router>
+  </ConfigProvider>
 );
 
 export default App;
