@@ -6,8 +6,8 @@ import {
   PlusOutlined,
   BookOutlined,
   PictureOutlined,
-  AndroidFilled,
 } from "@ant-design/icons";
+import { GiMagicSwirl } from "react-icons/gi";
 import { addUserJournal } from "../../utils/journals";
 
 const MenuButton = () => {
@@ -16,7 +16,7 @@ const MenuButton = () => {
       trigger="hover"
       type="primary"
       style={{ right: 24 }}
-      icon={<AndroidFilled />}
+      icon={<GiMagicSwirl />}
     >
       <FloatButton
         icon={<HomeOutlined />}
