@@ -11,11 +11,12 @@ import { deleteUserPhotos, describeUserPhoto, downloadSelectedPhotos, generateJo
 function calculateLimit() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    // This four values can be fine-tuned
-    const imageWidth = 150;
-    const imageHeight = 300;
-    const horizontalGap = 10;
-    const verticalGap = 10;
+
+    // 修改图片和间距的大小以适应不同的屏幕尺寸
+    const imageWidth = screenWidth < 768 ? 100 : 150; // 如果屏幕宽度小于768px，使用较小的图片宽度
+    const imageHeight = screenWidth < 768 ? 200 : 300; // 适应图片高度
+    const horizontalGap = screenWidth < 768 ? 5 : 10; // 更小的间距在小屏幕上
+    const verticalGap = screenWidth < 768 ? 5 : 10;
 
     const columns = Math.floor(screenWidth / (imageWidth + horizontalGap));
     const rows = Math.floor(screenHeight / (imageHeight + verticalGap));
@@ -25,7 +26,6 @@ function calculateLimit() {
 }
 
 const UserPhotoGallery: React.FC = () => {
-
     const [filter, setFilter] = useState<SearchFilters>({
         starred: false,
         device: null,
@@ -41,8 +41,6 @@ const UserPhotoGallery: React.FC = () => {
     const limit = calculateLimit();
     const navigate = useNavigate();
     const isInitialMount = useRef(true);
-
-
 
     const fetchPhotos = useCallback(async (isInitialFetch: boolean = false) => {
         if (isInitialMount.current) {
@@ -102,7 +100,6 @@ const UserPhotoGallery: React.FC = () => {
     };
 
     const handleDownload = async () => {
-
         const photoUrls = checkPhoto.map(photoId => photoData.find(item => item.photo_id === photoId)?.url).filter(url => url !== undefined) as string[];
 
         message.info('Downloading photos...');
@@ -135,7 +132,6 @@ const UserPhotoGallery: React.FC = () => {
     };
 
     const handleDelete = async () => {
-
         message.info('Deleting photos...');
         if (checkPhoto.length === 0) {
             message.error('Please select photos to delete.');
@@ -152,9 +148,7 @@ const UserPhotoGallery: React.FC = () => {
         };
     };
 
-
     const handleGenerate = async () => {
-        // generate journal from selected photos in checkPhoto
         if (checkPhoto.length === 0) {
             message.error('Please select photos to generate journal.');
             return;

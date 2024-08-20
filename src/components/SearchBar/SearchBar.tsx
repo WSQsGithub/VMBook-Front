@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Space, Input, DatePicker, Button, Radio, Select } from 'antd';
-// import { SearchFilters } from '../../utils/getFilterPhotos';
+import { Space, Input, DatePicker, Button, Radio, Select, Row, Col } from 'antd';
 import dayjs from 'dayjs';
 const { RangePicker } = DatePicker;
 
@@ -20,8 +19,6 @@ interface SearchFilters {
 
 const dateFormat = 'YYYY-MM-DD';
 
-
-// TODO Add the setState function for initFilters, or use context, so that the SearchBar params can be controlled by the parent component, won't always exec twice by any trigger. 
 const SearchBar: React.FC<SearchBarProps> = ({initFilters, onFilterChange, onFilterSet}) => {
     const [contains, setContains] = useState<string>(initFilters?.contains || '');
 
@@ -82,26 +79,49 @@ const SearchBar: React.FC<SearchBarProps> = ({initFilters, onFilterChange, onFil
     const fromDateInit = initFilters?.fromDate ? initFilters?.fromDate : "2024-01-01";
     const toDateInit = initFilters?.toDate ? initFilters?.toDate : "2024-12-31";
 
-
     return (
-        <Space>
-            <Radio.Group buttonStyle='solid' onChange={handleStarredChange} value={initFilters?.starred ? 'starred' : 'all'}>
-                <Radio.Button value="all">All</Radio.Button>
-                <Radio.Button value="starred">Starred</Radio.Button>
-            </Radio.Group>
-            <RangePicker
-                defaultValue={[dayjs(fromDateInit, dateFormat), dayjs(toDateInit, dateFormat)]}
-                onChange={handleDatePickerChange}
-            />
-            <Select placeholder='Device' onChange={handleDeviceChange} value={initFilters?.device}>
-                <Select.Option value="laptop">Laptop</Select.Option>
-                <Select.Option value="tablet">Tablet</Select.Option>
-                <Select.Option value="phone">Phone</Select.Option>
-                <Select.Option value="">All</Select.Option>
-            </Select>
-            <Input placeholder="Search Content..." onChange={handleContainsChange} value={contains || ''} onKeyDown={handleKeyDown}/>
-            <Button type="primary" onClick={handleFilterButtonClick}>Filter</Button>
-        </Space>
+        <div style={{width:'80vw'}}>
+        <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={6} lg={4}>
+                <Radio.Group buttonStyle='solid' onChange={handleStarredChange} value={initFilters?.starred ? 'starred' : 'all'} style={{ width: '100%' }}>
+                    <Radio.Button value="all">All</Radio.Button>
+                    <Radio.Button value="starred">Starred</Radio.Button>
+                </Radio.Group>
+            </Col>
+            <Col xs={24} sm={12} md={8} lg={6}>
+                <RangePicker
+                    defaultValue={[dayjs(fromDateInit, dateFormat), dayjs(toDateInit, dateFormat)]}
+                    onChange={handleDatePickerChange}
+                    style={{ width: '100%' }}
+                />
+            </Col>
+            <Col xs={24} sm={12} md={6} lg={4}>
+                <Select 
+                    placeholder='Device' 
+                    onChange={handleDeviceChange} 
+                    value={initFilters?.device} 
+                    style={{ width: '100%' }}
+                >
+                    <Select.Option value="laptop">Laptop</Select.Option>
+                    <Select.Option value="tablet">Tablet</Select.Option>
+                    <Select.Option value="phone">Phone</Select.Option>
+                    <Select.Option value="">All</Select.Option>
+                </Select>
+            </Col>
+            <Col xs={24} sm={12} md={6} lg={6}>
+                <Input 
+                    placeholder="Search Content..." 
+                    onChange={handleContainsChange} 
+                    value={contains || ''} 
+                    onKeyDown={handleKeyDown} 
+                    style={{ width: '100%' }}
+                />
+            </Col>
+            <Col xs={24} sm={24} md={4} lg={4}>
+                <Button type="primary" onClick={handleFilterButtonClick} style={{ width: '100%' }}>Filter</Button>
+            </Col>
+        </Row>
+        </div>
     );
 };
 

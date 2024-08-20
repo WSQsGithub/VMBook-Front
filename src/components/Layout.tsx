@@ -26,7 +26,7 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
   // ]
 
   return (
-    <Layout>
+    <Layout >
       <Header style={{ display: 'flex', alignItems: 'center' }}>
         <a href="/" style={{ color: 'white', fontSize: 24, fontFamily: 'cursive', fontWeight: 'bold' }}>
          <Space><MyIcon style={{ height: '10vh' }}/> SnapTale
@@ -34,12 +34,12 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children }) => {
         </a>
       </Header>
       <Content style={{ padding: '0 24px',
-        margin: '5px 0' , backgroundColor: '#F0F2F5'
+        margin: '5px 0' , backgroundColor: '#F0F2F5',
        }}>
         <div
           style={{
             background: colorBgContainer,
-            minHeight: 280,
+            minHeight: '90vh',
             padding: 24,
             borderRadius: borderRadiusLG,
           }}

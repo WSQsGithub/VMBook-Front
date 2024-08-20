@@ -30,7 +30,7 @@ const GalleryButtons: React.FC<GalleryButtonsProps> = ({checkPhotoNum, handleDow
 
     return (
       
-        <Space align="center" style={{ justifyContent: 'left' }}>
+        <Space align="center" style={{ justifyContent: 'left', width: '80vw' }} wrap>
         <Button type="primary" shape="round" icon={<DeleteOutlined />} size={'middle'} onClick={handleDelete} disabled={(checkPhotoNum !== undefined && checkPhotoNum === 0) || false}>
           Delete
         </Button>

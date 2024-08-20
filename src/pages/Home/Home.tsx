@@ -10,6 +10,7 @@ import ActivityHeatmap from './ActivityHeatmap';
 
 const HomeContent: React.FC = () => {
     return (
+        <div>
         <Row gutter={24}>
             <Col xs={24} sm={24} md={8} lg={6} xl={6}>
                 <Card style={{ marginBottom: '24px', border: 'none'}} >
@@ -25,6 +26,7 @@ const HomeContent: React.FC = () => {
                 </Card>
             </Col>
         </Row>
+        </div>
     );
 };
 

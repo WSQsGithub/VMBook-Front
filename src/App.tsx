@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import JournalListView from './pages/JournalListView/JournalListView';
 import UserPhotoGallery from './pages/UserPhotoGallery/UserPhotoGallery';
 import JournalView from './pages/JournalView/JournalView';
+import Login from './pages/Login/Login';
 
 const App: React.FC = () => (
   <ConfigProvider
@@ -23,7 +24,7 @@ const App: React.FC = () => (
 
   <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/journals" element={<JournalListView/> } />
       <Route path="/gallery" element={<UserPhotoGallery/> } />

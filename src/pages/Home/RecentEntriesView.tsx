@@ -55,11 +55,9 @@ const RecentEntriesView: React.FC = () => {
     }, []);
 
     return (
-        <List
-            grid={{ gutter: 16, column: 4 }}
-            dataSource={entries}
-            renderItem={(Item) => (
-                <List.Item>
+        <div style={{ overflowX: 'auto', display: 'flex', padding: '10px 0' }}>
+            {entries && entries.map((Item) => (
+                <div style={{ width: '250px', marginRight: '16px', flexShrink: 0 }} key={Item.journal_id}>
                     <a href={`/journalview?journalId=${Item.journal_id}`}>
                         <Card
                             hoverable
@@ -79,11 +77,10 @@ const RecentEntriesView: React.FC = () => {
                             <Card.Meta title={Item.title} description={dayjs(Item.time_modified).format(dateFormat)} />
                         </Card>
                     </a>
-                </List.Item>
-            )}
-        />
+                </div>
+            ))}
+        </div>
     );
-
 }
 
 export default RecentEntriesView;
