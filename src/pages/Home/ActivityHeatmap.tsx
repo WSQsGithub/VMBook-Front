@@ -67,7 +67,6 @@ const ActivityHeatmap = () => {
             value={value}
             weekLabels={['', 'Mon', '', 'Wed', '', 'Fri', '']}
             startDate={OneYearAgo}
-            endDate={new Date()}
             width='100%'
             rectProps={{ rx: 4 }}
             rectSize={12}

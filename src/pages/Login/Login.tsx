@@ -14,7 +14,6 @@ import type { CSSProperties } from 'react';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
-import enUS from 'antd/es/calendar/locale/en_US';
 
 
 const iconStyles: CSSProperties = {
@@ -35,9 +34,9 @@ const Page: React.FC = () => {
             }}
         >
             <LoginFormPage
-                // backgroundImageUrl="../../assets/login-bg.jpg"
+                backgroundImageUrl="https://vmbook-sh.oss-cn-shanghai.aliyuncs.com/%E8%83%8C%E6%99%AF.webp"
                 logo={<Logo style={iconStyles} />}
-                backgroundVideoUrl="https://gw.alipayobjects.com/v/huamei_gcee1x/afts/video/jXRBRK_VAwoAAAAAAAAAAAAAK4eUAQBr"
+                // backgroundVideoUrl="https://gw.alipayobjects.com/v/huamei_gcee1x/afts/video/jXRBRK_VAwoAAAAAAAAAAAAAK4eUAQBr"
                 title="SnapTale"
                 containerStyle={{
                     backgroundColor: 'rgba(0, 0, 0, 0.65)',
